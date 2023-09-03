@@ -7,9 +7,12 @@ class Solution {
             String a = String.valueOf(charArr);
             if(!res.containsKey(a)){
                 ArrayList<String> arr = new ArrayList<String>();
+                arr.add(s);
                 res.put(a, arr);
             }
-            res.get(a).add(s);
+            else{
+                res.get(a).add(s);
+            }  
         }
         return new ArrayList(res.values());
     }
