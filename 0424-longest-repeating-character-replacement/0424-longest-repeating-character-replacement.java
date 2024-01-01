@@ -9,12 +9,12 @@ class Solution {
             count[ch-'A']++;
             most_freq = Math.max(most_freq,count[ch-'A']);
             int total = right-left+1; //total elements in window
-            int replace_count = total - most_freq; 
-            if(replace_count>k){
-                count[s.charAt(left)-'A']--;
-                left++;
-            }else{
+            if( total - most_freq <= k){
                 max = Math.max(max,total);
+                
+            }else{
+                count[s.charAt(left)-'A']--;
+                left++;;
             }
         }
         return max;
