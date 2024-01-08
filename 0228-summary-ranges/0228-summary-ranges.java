@@ -4,7 +4,7 @@ class Solution {
         int index = 0;
         while (index < nums.length) {
             int temp = index;
-            while (((temp + 1) < nums.length) && (nums[temp + 1]  == nums[temp] + 1)) {
+            while (((temp + 1) < nums.length) && (nums[temp + 1]  == nums[temp] + 1))             {
                 temp++;
             }
             if (index == temp) {
