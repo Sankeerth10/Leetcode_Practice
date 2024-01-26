@@ -4,7 +4,7 @@ class Solution {
         for(int i =0; i < numRows; i ++) {
             List<Integer>li=new ArrayList<>();
             
-            for(int j=0;j<i+1;j++){
+            for(int j=0;j<=i;j++){
                 if(j == 0 || j == i){
                     li.add(1);
                 }
