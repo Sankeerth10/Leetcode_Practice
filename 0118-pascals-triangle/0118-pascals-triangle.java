@@ -9,7 +9,8 @@ class Solution {
                     li.add(1);
                 }
                 else{
-                    li.add(res.get(i-1).get(j-1) + res.get(i-1).get(j));
+                    List<Integer> prev_list = res.get(i-1);
+                    li.add(prev_list.get(j-1) + prev_list.get(j));
                 }
             }
             res.add(li);
