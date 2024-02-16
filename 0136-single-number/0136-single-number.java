@@ -1,21 +1,25 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        HashMap<Integer,Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            if (!map.containsKey(nums[i])) {
-                map.put(nums[i],1);
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i =0; i < nums.length; i++) {
+            if(!map.containsKey(nums[i])){
+                map.put(nums[i], 1);
             }
             else {
-                map.put(nums[i],map.get(nums[i]) + 1);
+                int val = map.get(nums[i]);
+                map.put(nums[i], val+1);
             }
         }
-        for ( Map.Entry<Integer,Integer> entry : map.entrySet()) {
-            Integer key = entry.getKey();
-            Integer value = entry.getValue();
-            if (map.get(key) == 1) {
-                return key;
+        Integer foundKey = null;
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue().equals(1)) {
+                foundKey = entry.getKey();
+                break;
             }
         }
-        return 0;
+        return (int) foundKey;
     }
 }
