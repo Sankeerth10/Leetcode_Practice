@@ -5,7 +5,7 @@ public class Solution {
         
         for (int right = 0; right < fruits.length; right++) {
             map.put(fruits[right], right);
-            if (map.size() > 2) {
+            while (map.size() > 2) {
                 if (map.get(fruits[left]) == left) {
                     map.remove(fruits[left]);
                 }
